@@ -1,3 +1,7 @@
+#ifndef MAGE.HPP
+#define MAGE.HPP
+
+
 #include "Character.hpp"
 
 class mage: public Character
@@ -13,3 +17,5 @@ class mage: public Character
     };
 
 };
+
+#endif
