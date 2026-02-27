@@ -1,3 +1,6 @@
+#ifndef GIANT_HPP
+#define GIANT_HPP
+
 #include "Character.hpp"
 
 class giant : public Character 
@@ -12,3 +15,5 @@ class giant : public Character
     };
 
 };
+
+#endif
