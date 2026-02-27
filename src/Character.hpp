@@ -1,26 +1,24 @@
+#ifndef CHARACTER_HPP//include guard to prevent files to be included multiple time
+#define CHARACTER_HPP
 
 
 class Character
 {
     protected: 
     int health;
-    int attack_power;
+    int attackPower;
     int defense;
     int turn_count;
 
     //constructor  
-    Character(int h , int ap, int d)
-    {
-        health = h;
-        attack_power = ap;
-        defense = d;
-        turn_count  = 0;//at the starting the turn count is always zero 
-    }
+    Character(int h , int ap, int d);
 
     public: 
     virtual void onTurn();
-    virtual void attack();
-    virtual void takeDamage();
+    virtual void attack(Character& target);
+    virtual void takeDamage(int damage);
     virtual void displayStats();
 
 };
+
+#endif
