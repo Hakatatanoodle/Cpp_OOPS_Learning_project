@@ -25,8 +25,17 @@ void Character::onTurn()
 
 void Character::takeDamage(int damage)
 {
-    health -=damage;
+    int actualDamage = damage - defense;//more defense less damage , less defense more damage 
+    if(actualDamage<0)
+    {
+        actualDamage = 0;
+    }
 
+    health -=actualDamage;
+    if(health<0)
+    {
+        health = 0;//health cannot go below zero 
+    }
 }
 void Character::attack(Character& target)
 {
