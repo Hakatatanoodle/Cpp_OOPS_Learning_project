@@ -8,7 +8,7 @@ class Character
     int health;
     int attackPower;
     int defense;
-    int turn_count;
+    int turnCount;
 
     //constructor  
     Character(int h , int ap, int d);

@@ -9,7 +9,7 @@ Character::Character(int h,int ap,int d)
     health = h;
     attackPower = ap;
     defense = d;
-    turn_count  = 0;//at the starting the turn count is always zero
+    turnCount  = 0;//at the starting the turn count is always zero
 }
 void Character :: displayStats()
 {
@@ -20,7 +20,7 @@ void Character :: displayStats()
 
 void Character::onTurn()
 {
-    turn_count++;
+    turnCount++;   
 }
 
 void Character::takeDamage(int damage)
