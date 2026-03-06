@@ -10,7 +10,7 @@ class warrior: public Character
 
     public: 
 
-    warrior(int h , int ap, int d);//warrior consturctor while first calling character constructor 
+    warrior(int h , int ap, int d,std::string name);//warrior consturctor while first calling character constructor 
 
     void onTurn() override;
     void attack(Character& target) override;

@@ -1,7 +1,7 @@
 #include "utils.hpp"
 #include "mage.hpp"
 
-mage::mage(int h , int ap,int d ): Character(h,ap,d)
+mage::mage(int h , int ap,int d,std::string name): Character(h,ap,d,"Mage")
 {
     dodgedAttack = false;
 }

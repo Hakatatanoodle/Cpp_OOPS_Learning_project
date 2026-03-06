@@ -9,10 +9,12 @@ class giant : public Character
     bool isEarthquakeActive;
 
     public:
-    giant(int h, int ap, int d) : Character(h,ap,d)//giant constructor
-    {
-        isEarthquakeActive = false;//initially no earthquake 
-    };
+    giant(int h, int ap, int d,std::string name);
+    
+    void onTurn() override;
+    void attack(Character& target) override;
+    void takeDamage(int damage) override;
+    void displayStats() override;
 
 };
 

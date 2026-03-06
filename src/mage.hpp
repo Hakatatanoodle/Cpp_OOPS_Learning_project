@@ -10,7 +10,7 @@ class mage: public Character
     bool dodgedAttack;
 
     public: 
-    mage(int h , int ap, int d);//mage consturctor while first calling character constructor 
+    mage(int h , int ap, int d,std::string name);//mage consturctor while first calling character constructor 
     
     void onTurn() override;
     void attack(Character& target) override;

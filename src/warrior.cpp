@@ -1,7 +1,7 @@
 #include "warrior.hpp"
 #include "utils.hpp"
 
-warrior::warrior(int h ,int ap , int d):Character(h,ap,d)
+warrior::warrior(int h ,int ap , int d,std::string name):Character(h,ap,d,"Warrior")
 {
     isBoostActive = false;
 

@@ -1,15 +1,17 @@
 
 #include<iostream>
 #include "Character.hpp"
+#include<string>
 
 
 
-Character::Character(int h,int ap,int d)
+Character::Character(int h,int ap,int d,std::string name)
 {
     health = h;
     attackPower = ap;
     defense = d;
     turnCount  = 0;//at the starting the turn count is always zero
+    this->name/*attribute*/= name;//parameter
 }
 void Character :: displayStats()
 {

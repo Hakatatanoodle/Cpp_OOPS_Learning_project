@@ -1,7 +1,7 @@
 #include "giant.hpp"
 #include "utils.hpp"
 
-giant::giant(int h , int ap , int d):Character(h,ap,d)
+giant::giant(int h , int ap , int d,std::string name):Character(h,ap,d,"Giant")
 {
     isEarthquakeActive = false;
 }
