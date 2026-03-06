@@ -19,7 +19,7 @@ void warrior::onTurn()
 
 void warrior::attack(Character& target)
 {
-    if(utility::randomNumberGenerator()<=30 && isBoostActive == true)
+    if(utility::randomNumberGenerator(1,100)<=30 && isBoostActive == true)
     {
         int damage = attackPower*2;
         target.takeDamage(damage); 
@@ -32,7 +32,7 @@ void warrior::attack(Character& target)
 
 void warrior::takeDamage(int damage)
 {
-    if(utility::randomNumberGenerator()<=30 && isBoostActive ==true)
+    if(utility::randomNumberGenerator(1,100)<=30 && isBoostActive ==true)
     {
         int actualDamage = damage * 2;//critical damage
         Character::takeDamage(actualDamage);//if takeDamge for warrior then infinte loop

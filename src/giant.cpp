@@ -11,7 +11,7 @@ void giant::onTurn()
     Character::onTurn();
     if(turnCount % 7 == 0 )
     {
-        if(utility::randomNumberGenerator()<=50)
+        if(utility::randomNumberGenerator(1,100)<=50)
         {
             isEarthquakeActive = true;
         }
