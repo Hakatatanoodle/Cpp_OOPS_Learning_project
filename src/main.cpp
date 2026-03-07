@@ -4,6 +4,8 @@
 #include "mage.hpp"
 #include "utils.hpp"
 #include <iostream>
+#include<thread>
+#include <chrono>
 
 int main()
 {
@@ -49,6 +51,7 @@ int main()
         return 0;
     }
 
+    std::this_thread::sleep_for(std::chrono::seconds(2));
     enemyChoice = utility::randomNumberGenerator(1,3);
     switch(enemyChoice)
     {
@@ -75,6 +78,7 @@ int main()
     //logic to choose who attacks first
     int coinToss=utility::randomNumberGenerator(1,2);
     std::cout << "The coin is being flipped ...\nAnd the winner is ..."<<std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(1));
     if(coinToss == 1)
     {
         std::cout << "The player , Player gets to attack first !"<<std::endl;
@@ -98,10 +102,11 @@ int main()
         attacker->onTurn();
         attacker->displayStats();
         defender->displayStats();
-        std::cout << attacker->getName()<<" Turn !"<<std::endl;
-
+        std::cout << attacker->getName()<<" is thinking ...."<<std::endl ;
+        std::this_thread::sleep_for(std::chrono::seconds(2));
         attacker->attack(*defender);
         std::cout << attacker->getName() << " attacked " <<  defender->getName()<<std::endl;
+        std::this_thread::sleep_for(std::chrono::seconds(4));
         if(defender->getHealth() <=0)
         {
             //gameEnd = true;
@@ -113,6 +118,9 @@ int main()
         attacker = defender ;
         defender = temp;
     }
+
+    delete player;
+    delete enemy;
 
 
     return 0;
