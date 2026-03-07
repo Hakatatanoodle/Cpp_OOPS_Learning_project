@@ -1,5 +1,6 @@
 #include "giant.hpp"
 #include "utils.hpp"
+#include<iostream>
 
 giant::giant(int h , int ap , int d,std::string name):Character(h,ap,d,"Giant")
 {
@@ -47,4 +48,9 @@ void giant::takeDamage(int damage)
     {
         Character::takeDamage(damage);
     }
+}
+
+void giant::displayStats()
+{
+    std::cout << "Giant stats"<<std::endl;
 }

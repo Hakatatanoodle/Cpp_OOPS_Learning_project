@@ -45,3 +45,12 @@ void Character::attack(Character& target)
     target.takeDamage(damage);
 }
 
+int Character::getHealth()
+{
+    return health;
+}
+std::string Character::getName()
+{
+    return name;
+}
+

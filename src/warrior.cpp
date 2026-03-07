@@ -1,6 +1,6 @@
 #include "warrior.hpp"
 #include "utils.hpp"
-
+#include<iostream>
 warrior::warrior(int h ,int ap , int d,std::string name):Character(h,ap,d,"Warrior")
 {
     isBoostActive = false;
@@ -42,4 +42,10 @@ void warrior::takeDamage(int damage)
         Character::takeDamage(damage);
     }
 
+}
+
+
+void warrior::displayStats()
+{
+    std::cout << "Warrior stats"<<std::endl;
 }

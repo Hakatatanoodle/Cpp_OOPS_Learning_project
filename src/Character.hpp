@@ -21,6 +21,10 @@ class Character
     virtual void takeDamage(int damage);
     virtual void displayStats();
 
+    //getter
+    int getHealth();
+    std::string getName();
+
 };
 
 #endif

@@ -1,5 +1,6 @@
 #include "utils.hpp"
 #include "mage.hpp"
+#include<iostream>
 
 mage::mage(int h , int ap,int d,std::string name): Character(h,ap,d,"Mage")
 {
@@ -14,7 +15,7 @@ void mage::onTurn()
     //set dodged attack to false if it is true 
     if(turnCount%5 == 0 )
     {
-        if(utility::randomNumberGenerator()<=40)
+        if(utility::randomNumberGenerator(1,100)<=40)
         {
             health+=(int)(health*0.25);
         }
@@ -35,7 +36,7 @@ void mage::attack(Character& target)
         return ;
     }
     //check for critical hit every turn 
-    if(utility::randomNumberGenerator()<=10)
+    if(utility::randomNumberGenerator(1,100)<=10)
     {
         int damage = attackPower*3;
         target.takeDamage(damage);
@@ -51,7 +52,7 @@ void mage::takeDamage(int damage)
 {
     if(turnCount%3 == 0)
     {
-        if(utility::randomNumberGenerator()<=40)
+        if(utility::randomNumberGenerator(1,100)<=40)
         {
             dodgedAttack = true;
         }
@@ -65,4 +66,9 @@ void mage::takeDamage(int damage)
         Character::takeDamage(damage);
     }
 
+}
+
+void mage::displayStats()
+{
+    std::cout << "Mage stats"<<std::endl;
 }

@@ -4,7 +4,7 @@
 class utility
 {
     public:
-    static int randomNumberGenerator();
+    static int randomNumberGenerator(int min , int max);
 };
 
 #endif
