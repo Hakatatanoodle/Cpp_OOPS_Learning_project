@@ -96,11 +96,16 @@ int main()
     while(true)
     {
         attacker->onTurn();
+        attacker->displayStats();
+        defender->displayStats();
+        std::cout << attacker->getName()<<" Turn !"<<std::endl;
+
         attacker->attack(*defender);
+        std::cout << attacker->getName() << " attacked " <<  defender->getName()<<std::endl;
         if(defender->getHealth() <=0)
         {
             //gameEnd = true;
-            std::cout << defender->getName() << " is Dead" << attacker->getName() << "Wins the match!"<<std::endl;
+            std::cout << defender->getName() << " is Dead " << attacker->getName() << " Wins the match!"<<std::endl;
             break;
         }
         //swap attacker and defender 

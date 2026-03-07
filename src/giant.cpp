@@ -53,4 +53,5 @@ void giant::takeDamage(int damage)
 void giant::displayStats()
 {
     std::cout << "Giant stats"<<std::endl;
+    std::cout <<"Health:"<<giant::getHealth()<<std::endl;
 }

@@ -47,5 +47,6 @@ void warrior::takeDamage(int damage)
 
 void warrior::displayStats()
 {
-    std::cout << "Warrior stats"<<std::endl;
+    std::cout << "Warrior stats:"<<std::endl;
+    std::cout <<"Health: "<<warrior::getHealth()<<std::endl;
 }

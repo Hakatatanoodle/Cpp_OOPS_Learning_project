@@ -71,4 +71,5 @@ void mage::takeDamage(int damage)
 void mage::displayStats()
 {
     std::cout << "Mage stats"<<std::endl;
+    std::cout <<"Health:"<<mage::getHealth()<<std::endl;
 }
