@@ -10,6 +10,10 @@ int main()
     int playerChoice,enemyChoice;
     Character* player = nullptr;
     Character* enemy = nullptr;
+    Character* attacker = nullptr;//temporary roles that swap every turn 
+    Character* defender = nullptr;
+    Character* temp = nullptr;//a temporary character pointer to swap attacker and defender 
+    bool gameEnd = false;//flag to check if the game is ended
 
     std::cout<<"----------------------Welcome to Dune Wars!------------------ " <<std::endl;
     std::cout << "Choose which character to use for fight : " << std::endl;
@@ -68,5 +72,43 @@ int main()
         }
         default: std::cout << "INVALID INPUT\nNo such Character!!"<<std::endl;break;
     }
+    //logic to choose who attacks first
+    int coinToss=utility::randomNumberGenerator(1,2);
+    std::cout << "The coin is being flipped ...\nAnd the winner is ..."<<std::endl;
+    if(coinToss == 1)
+    {
+        std::cout << "The player , Player gets to attack first !"<<std::endl;
+        attacker = player;
+        defender = enemy;
+
+    } 
+    if(coinToss == 2)
+    {
+        std::cout << "The Oppositon , Opposition gets to attack first !"<<std::endl;
+        attacker = enemy;
+        defender = player;
+    } 
+
+
+    //battle loop
+
+
+    while(true)
+    {
+        attacker->onTurn();
+        attacker->attack(*defender);
+        if(defender->getHealth() <=0)
+        {
+            //gameEnd = true;
+            std::cout << defender->getName() << " is Dead" << attacker->getName() << "Wins the match!"<<std::endl;
+            break;
+        }
+        //swap attacker and defender 
+        temp = attacker;
+        attacker = defender ;
+        defender = temp;
+    }
+
+
     return 0;
 }
